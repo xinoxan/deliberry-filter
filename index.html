@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/reset.css"> 
+	<link rel="stylesheet" href="css/style.css"> 
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+  	
+	<title>DELIBERRY FILTER</title>
+</head>
+<body>
+	<nav class="navBar">
+  <nav class="wrapper">
+    <div class="logo">
+    <h1><a href="https://deliberry.com"><img src="img/logo-deliberry.svg" alt="Deliberry"></a></h1>	
+    </div><!-- Logo -->
+    <input type="checkbox" id="menu-toggle" />
+      <label for="menu-toggle" class="label-toggle"></label>
+    <ul>
+      <li><a href="#">Mi cuenta</a></li>
+    </ul>
+  </nav>
+</nav>
+	<main class="cd-main-content">
+		<div class="cd-tab-filter-wrapper">
+			<div class="cd-tab-filter">
+				<ul class="cd-filters">
+					<li class="placeholder"> 
+						<a data-type="all" href="#0" onclick='clickfunc(this)'>SELECCIONA</a> <!-- selected option on mobile -->
+					</li> 
+					
+					<li class="filter" data-filter=".color-1"><a href="#0" data-type="color-1" onclick='clickfunc(this)'>CATEGORÍAS</a></li>
+					<li class="filter" data-filter=".color-2"><a href="#0" data-type="color-2" onclick='clickfunc(this)'>MIS PRODUCTOS</a></li>
+				</ul> <!-- cd-filters -->
+			</div> <!-- cd-tab-filter -->
+		</div> <!-- cd-tab-filter-wrapper -->
+
+
+				<section class="cd-gallery">
+
+					<div class="list-title">
+				<h2 class="headline">Listado: TODOS</h2>
+					</div>
+			<ul>
+				<li class="mix color-1">
+				    <div class="list--item">
+      					<figure>
+        				<img src="img/nestle.png" alt="">
+        				<header>
+        				<div class="floater">
+          					</div>
+          					<h2>Nido Fortified</h2>
+        				</header>  
+        				<figcaption>
+        			<h2>Nestlé</h2>
+        			<h2>8 euros</h2>
+						</figcaption>
+      					</figure>
+    				</div>	
+				</li>
+
+				<li class="mix color-2">
+				<div class="list--item">
+      					<figure>
+        				<img src="img/aperitivo.png" alt="">
+        				<header>
+        				<div class="floater">
+          					</div>
+          					<h2>Aperitivos</h2>
+        				</header>  
+        				<figcaption>
+        			<h2>Cala</h2>
+        			<h2>15 euros</h2>
+						</figcaption>
+      					</figure>
+    				</div>		
+				</li>
+
+				<li class="mix color-1">
+				<div class="list--item">
+      					<figure>
+        				<img src="img/chips.png" alt="">
+        				<header>
+        				<div class="floater">
+          					</div>
+          					<h2>Chips</h2>
+        				</header>  
+        				<figcaption>
+        			<h2>La Cala</h2>
+        			<h2>10 euros</h2>
+						</figcaption>
+      					</figure>
+    				</div>		
+				</li>
+
+				<li class="mix color-1">
+				<div class="list--item">
+      					<figure>
+        				<img src="img/framboise.png" alt="">
+        				<header>
+        				<div class="floater">
+          					</div>
+          					<h2>Framboise</h2>
+        				</header>  
+        				<figcaption>
+        			<h2>Lindemans</h2>
+        			<h2>8 euros</h2>
+						</figcaption>
+      					</figure>
+    				</div>		
+				</li>
+
+				<li class="mix color-1">
+				<div class="list--item">
+      					<figure>
+        				<img src="img/pate.png" alt="">
+        				<header>
+        				<div class="floater">
+          					</div>
+          					<h2>Paté</h2>
+        				</header>  
+        				<figcaption>
+        			<h2>Contadini</h2>
+        			<h2>18 euros</h2>
+						</figcaption>
+      					</figure>
+    				</div>		
+				</li>
+
+				<li class="mix color-2">
+				<div class="list--item">
+      					<figure>
+        				<img src="img/hoppy.png" alt="">
+        				<header>
+        				<div class="floater">
+          					</div>
+          					<h2>Hoppy Ale</h2>
+        				</header>  
+        				<figcaption>
+        			<h2>Taras Boulba</h2>
+        			<h2>8 euros</h2>
+						</figcaption>
+      					</figure>
+    				</div>		
+				</li>
+
+				<li class="mix color-2">
+				<div class="list--item">
+      					<figure>
+        				<img src="img/carte.png" alt="">
+        				<header>
+        				<div class="floater">
+          					</div>
+          					<h2>Carte d'Or</h2>
+        				</header>  
+        				<figcaption>
+        			<h2>Helado</h2>
+        			<h2>8 euros</h2>
+						</figcaption>
+      					</figure>
+    				</div>		
+				</li>
+
+				<li class="mix color-1">
+				<div class="list--item">
+      					<figure>
+        				<img src="img/marsellaise.png" alt="">
+        				<header>
+        				<div class="floater">
+          					</div>
+          					<h2>Marsellaise</h2>
+        				</header>  
+        				<figcaption>
+        			<h2>Champú</h2>
+        			<h2>8 euros</h2>
+						</figcaption>
+      					</figure>
+    				</div>		
+				</li>
+
+				<li class="mix color-2">
+				<div class="list--item">
+      					<figure>
+        				<img src="img/virutas.png" alt="">
+        				<header>
+        				<div class="floater">
+          					</div>
+          					<h2>Virutas</h2>
+        				</header>  
+        				<figcaption>
+        			<h2>Chips</h2>
+        			<h2>6 euros</h2>
+						</figcaption>
+      					</figure>
+    				</div>		
+
+				</li>
+				
+				<li class="mix color-1">
+				<div class="list--item">
+      					<figure>
+        				<img src="img/chocolisto.png" alt="">
+        				<header>
+        				<div class="floater">
+          					</div>
+          					<h2>Chocolisto</h2>
+        				</header>  
+        				<figcaption>
+        			<h2>Helado</h2>
+        			<h2>8 euros</h2>
+						</figcaption>
+      					</figure>
+    				</div>		
+				</li>
+
+				<li class="mix color-1">
+				<div class="list--item">
+      					<figure>
+        				<img src="img/crianza.png" alt="">
+        				<header>
+        				<div class="floater">
+          					</div>
+          					<h2>Rioja Vega</h2>
+        				</header>  
+        				<figcaption>
+        			<h2>Vino Rioja</h2>
+        			<h2>8 euros</h2>
+						</figcaption>
+      					</figure>
+    				</div>		
+				</li>
+
+				<li class="mix color-2">
+				<div class="list--item">
+      					<figure>
+        				<img src="img/mermelada.png" alt="">
+        				<header>
+        				<div class="floater">
+          					</div>
+          					<h2>Mermelada</h2>
+        				</header>  
+        				<figcaption>
+        			<h2>Pitaya</h2>
+        			<h2>7 euros</h2>
+						</figcaption>
+      					</figure>
+    				</div>		
+
+				</li>
+
+					<li class="mix color-2">
+					<div class="list--item">
+      					<figure>
+        				<img src="img/oliva.png" alt="">
+        				<header>
+        				<div class="floater">
+          					</div>
+          					<h2>Aceite de Oliva</h2>
+        				</header>  
+        				<figcaption>
+        			<h2>Morainsa</h2>
+        			<h2>8 euros</h2>
+						</figcaption>
+      					</figure>
+    				</div>		
+
+					</li>
+						<li class="mix color-2">
+						<div class="list--item">
+      					<figure>
+        				<img src="img/vino.png" alt="">
+        				<header>
+        				<div class="floater">
+          					</div>
+          					<h2>Marqués</h2>
+        				</header>  
+        				<figcaption>
+        			<h2>Vino Rioja</h2>
+        			<h2>8 euros</h2>
+						</figcaption>
+      					</figure>
+    				</div>		
+						</li>
+				<li class="gap"></li>
+				<li class="gap"></li>
+				<li class="gap"></li>
+			</ul>
+		
+		</section> <!-- cd-gallery -->
+
+
+	</main> <!-- cd-main-content -->
+<script src="js/jquery-2.1.1.js"></script>
+<script src="js/jquery.mixitup.min.js"></script>
+<script src="js/app.js"></script>  
+</body>
+</html>

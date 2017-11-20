@@ -1,0 +1,37 @@
+
+@import url(http://fonts.googleapis.com/css?family=Raleway|Open+Sans:400italic,700italic,400,700);
+
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans|Open+Sans:400italic,700italic,400,700);
+
+
+
+
+// colors
+
+$color-red: #f35659; // Bleached Cedar
+$color-green: #0f8043; // Minsk
+$color-white: #ffffff; // White
+$color-grey: #9a9a9a; // Grey
+$color-black:#000; // black
+$color-red-shadow:#cb3443;
+
+
+$color-red-light:lighten($color-red, 10%);
+$color-grey-light:lighten($color-grey,10%);
+// font stack
+
+$raleway-font: 'Raleway', sans-serif;  
+
+$primary-font: 'Open Sans', sans-serif;
+
+// tab-filter size
+
+$tab-filter-height: 50px;
+
+
+// Border radius
+
+$br: 10px;
+
+

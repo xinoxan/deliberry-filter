@@ -1,0 +1,32 @@
+/* -------------------------------- 
+
+BASE STYLES
+
+-------------------------------- */
+
+*, *::after, *::before {
+	@include box-sizing(border-box);
+}
+
+html {
+	font-size: 62.5%;
+}
+
+html * {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body {
+	font: {
+		size: 1.6rem;
+		family: $primary-font; // variables inside partials > _variables.scss
+	}
+	color: $color-red;
+	background-color: lighten($color-grey, 30%);
+}
+
+a {
+	color: $color-green;
+	text-decoration: none;
+}

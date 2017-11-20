@@ -1,0 +1,93 @@
+
+
+/*==================================================
+ * MEDIA QUERIES BREAKPOINTS
+ * ===============================================*/
+   
+$S:     480px;   
+$SM:    568px;   
+$M:     768px;     
+$L:     1170px;   
+
+// conditional statement media queries breakpoints
+
+@mixin MQ($canvas) {
+  @if $canvas == S {
+   @media only screen and (min-width: $S) { @content; } 
+  }
+  @else if $canvas == SM {
+   @media only screen and (min-width: $SM) { @content; } 
+  }
+
+  @else if $canvas == M {
+   @media only screen and (min-width: $M) { @content; } 
+  }
+  @else if $canvas == L {
+   @media only screen and (min-width: $L) { @content; } 
+  }
+}
+
+
+
+/*==================================================
+ * MIXIN BOX EFFECTS 
+ * ===============================================*/
+
+
+@mixin box-shadow($value) {
+    -webkit-box-shadow: $value;
+    -moz-box-shadow: $value;
+    box-shadow: $value;
+}
+
+
+/*==================================================
+ * MIXIN OPACITY
+ * ===============================================*/
+
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+
+
+/*==================================================
+ * MIXIN ARROW EFFECT
+ * ===============================================*/
+
+@mixin center($xy:xy) {
+  @if $xy == xy {
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    @include transform(translateX(-50%) translateY(-50%));
+  }
+  @else if $xy == x {
+    left: 50%;
+    right: auto;
+    @include transform(translateX(-50%));
+  }
+  @else if $xy == y {
+    top: 50%;
+    bottom: auto;
+    // @include transform(translateY(-50%));
+  }
+}
+
+/*==================================================
+ * SET A REM FONT SIZE WITH PIXEL FALLBACK
+ * ===============================================*/
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}

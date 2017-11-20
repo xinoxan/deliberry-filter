@@ -1,0 +1,618 @@
+
+/*==================================================
+ * MAIN COMPONENTS 
+ * ===============================================*/
+
+.navBar {
+  background-color: $color-red;
+  position: relative;
+  min-width: 100%;
+}
+
+.logo {
+  display: inline-block;
+  margin: 1.2em 0;
+  margin-left:2em;
+
+ }
+
+ .list-title{
+ font-family:$raleway-font;
+ font-weight:bold;
+ @include font-size(30px);
+ margin:20px 0;
+ }
+
+	h1>a>img{
+		width:104px;
+		height:31px;
+	}
+
+
+/*==================================================
+ * NAV
+ * ===============================================*/
+
+nav {
+  ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+    width: 50%;
+    
+    a {
+    color:$color-white;
+    
+
+      &:hover {background-color: $color-white;
+      			color:$color-red;
+      }
+    }
+  }
+  
+  li  {
+    display: inline-block;
+    padding:10px;
+  }
+  
+  #menu-toggle {display: none;}
+  
+  .label-toggle {display: none;}
+  
+  .wrapper {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+	@include MQ(M) {
+		nav ul a {
+	@include box-shadow(0 3px 0 0 $color-red-shadow);
+    border-color: transparent;
+	position: relative;
+    padding: .61538462em 1em;
+    vertical-align: middle;
+    min-height: 2.46153846em;
+    box-sizing: border-box;
+    font-weight: 400;
+    font-family: inherit;
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
+    background-color: transparent;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    outline: none;
+    touch-action: manipulation;
+    transition: all .3s ease-in;
+	background-color: $color-red-light;
+
+		}
+
+	}
+
+  
+  @media screen and (max-width: 768px) {
+    nav {
+      ul {
+        a {
+          color: $color-white;
+        }
+      }
+    }
+    ul {
+      background-color: $color-red;
+      display: block;
+      height: 0;
+      list-style-type: none;
+       @include opacity(0);
+      transition: all 1s ease;
+      text-align: center;
+      width: 100%;
+      visibility: hidden;
+      overflow:hidden;
+      z-index:-10;
+    }
+    
+    li {
+      border-bottom: 2px solid $color-white;
+      color: $color-white;
+      display: block;
+      @include font-size(24px);
+      padding: 2em 0;
+
+    }
+  
+    #menu-toggle:checked ~ ul {
+      @include opacity(1);
+      height: 100vh;
+     visibility: visible;
+	 padding:20px;
+    }
+    
+    .label-toggle {
+      background: linear-gradient(to bottom, $color-white 0%, $color-white 20%, 
+      transparent 20%, transparent 40%, $color-white 40%, $color-white 60%, transparent 60%, 
+      transparent 80%, $color-white 80%, $color-white 100%); //Gradient Hamburger
+      cursor: pointer;
+      display: block;
+      float: right;
+      height: 35px;
+      margin-top: 1em;
+      margin-right:1em;
+      width: 35px;
+    }
+    
+    .wrapper {display: block;}
+  }
+}
+
+
+/*==================================================
+ * PRODUCT BOX ITEMS
+ * ===============================================*/
+
+.list--item {
+  float:left;
+  padding:10px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+
+figure {
+    background:#fff;
+    box-shadow:0 2px 3px rgba(black,0.1);
+    position:relative;
+  }
+  
+  img {
+    display:block;
+    width:100%;
+  }
+  
+  figcaption {
+  	font-family:$raleway-font;
+    padding:6px 12px 12px;
+  
+  }
+
+  header, figcaption {
+    padding-left:25%;
+  }
+  header {
+    margin-top:12px;
+  }
+  h2 {
+    padding:0 0 0;
+    margin:0;
+    text-align:left;
+    font-size:1.4rem;
+  }
+  
+  
+.floater {
+  width:20%;
+  height:54px;
+  background:$color-red-light;
+  position: absolute;
+  left:0; 
+}
+}
+
+
+/*==================================================
+ * LAYOUT COLUMNS
+ * ===============================================*/
+
+
+.cd-main-content {
+	position: relative;
+	min-height: 100vh;
+	@include clearfix;
+
+	&.is-fixed {
+		.cd-tab-filter-wrapper {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+		}
+
+		.cd-gallery {
+			padding-top: 26px+$tab-filter-height;
+		}
+
+		.cd-filter {
+			position: fixed;
+			height: 100vh;
+			overflow: hidden;
+
+			form {
+				height: 100vh;
+				overflow: auto;
+				-webkit-overflow-scrolling: touch;
+			}
+		}
+
+		.cd-filter-trigger {
+			position: fixed;
+		}
+
+		@include MQ(M) {
+			.cd-gallery {
+				padding-top: 40px+$tab-filter-height;
+			}
+		}
+
+		@include MQ(L) {
+			.cd-gallery {
+				padding-top: 50px+$tab-filter-height;
+			}
+		}
+	}
+}
+
+/*==================================================
+ * TAB FILTER 
+ * ===============================================*/
+
+.cd-tab-filter-wrapper {
+	background-color: $color-white;
+	box-shadow: 0 1px 1px rgba($color-black, .08);
+	z-index: 1;
+	@include clearfix;
+}
+
+.cd-tab-filter {
+	/* tabbed navigation style on mobile - dropdown */
+	position: relative;
+	height: $tab-filter-height;
+	width: 140px;
+	margin: 0 auto;
+	z-index: 1;
+
+	&::after { 
+		/* small arrow icon */
+		content:'';
+		position: absolute;
+		right: 10px;
+		@include center(y); // see partials > mixins
+
+		display: inline-block;
+		width: 16px;
+		height: 16px;
+
+		background: url('../img/cd-icon-arrow.svg') no-repeat center center;
+
+		@include transition(all .3s);
+		pointer-events: none;
+	}
+
+	ul {
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		background-color: $color-white;
+		box-shadow: inset 0 -2px 0 $color-green;
+	}
+
+	li {
+		display: none; 
+
+		&:first-child {
+			/* this way the placehodler is alway visible */
+			display: block; 
+		}
+	}
+
+	a {
+		display: inline-block;
+		/* set same size of the .cd-tab-filter */
+		height: $tab-filter-height;
+		width: 140px;
+		line-height: $tab-filter-height;
+		padding-left: 14px;
+		 @include font-size(18px);
+		font-weight:bold;
+		font-family:$raleway-font;
+
+		&.selected {
+			background: $color-green;
+			color: $color-white;
+		}
+	}
+
+	&.is-open {
+
+		&::after {
+			/* small arrow rotation */
+			@include transform(translateY(-50%) rotate(-180deg));  
+		}
+
+		ul {
+			box-shadow: inset 0 -2px 0 $color-green, 0 2px 10px rgba($color-black, .2);
+		}
+
+		ul li {
+			display: block;
+		}
+
+		.placeholder a {
+			/* reduces the opacity of the placeholder on mobile when the menu is open */
+			 @include opacity(0.4);
+		}
+	}
+
+	@include MQ(M) {
+		/* tabbed navigation style on medium devices */
+		width: auto;
+		cursor: auto;
+		@include box-shadow(0 10px 6px -6px $color-grey-light);
+
+		&::after {
+			/* hide the arrow */
+			display: none;
+		}
+
+		ul {
+			background: transparent;
+			position: static;
+			box-shadow: none;
+			text-align: center;
+		}
+
+		li {
+			display: inline-block;
+
+			&.placeholder {
+				display: none !important; 
+			}
+		}
+
+		a {
+			display: inline-block;
+			padding: 0 1em;
+			width: auto;
+
+			color: $color-grey;
+			text-transform: uppercase;
+			font-weight: 700;
+			 @include font-size(20px);
+
+			.no-touch &:hover {
+				color: $color-green;
+			}
+
+			&.selected {
+				background: transparent;
+				color: $color-green;
+				/* create border bottom using box-shadow property */
+				@include box-shadow(inset 0 -4px 0 $color-green);
+				
+			}
+		}
+
+		&.is-open {
+			ul li {
+				display: inline-block;
+			}
+		}
+	}
+
+	@include MQ(L) {
+		/* tabbed navigation on big devices */
+		width: 100%;
+		float: right;
+		margin: 0;
+		@include transition(width .3s);
+
+		&.filter-is-visible {
+			/* reduce width when filter is visible */
+			width: 80%;
+		}
+	}
+}
+
+/*==================================================
+ * LISTING LAYOUT
+ * ===============================================*/
+
+.cd-gallery {
+	padding: 26px 5%;
+	width: 100%;
+
+	li {
+		margin-bottom: 1.6em;
+		box-shadow: 0 1px 4px rgba($color-black, .1);
+		display: none;
+
+		&.gap {
+			
+			 @include opacity(0);
+			height: 0;
+			display: inline-block;
+		}
+	}
+
+	img {
+		display: block;
+		width: 100%;
+	}
+
+	.cd-fail-message {
+		display: none;
+		text-align: center;
+	}
+
+
+	@include MQ(SM){
+		padding:20px;
+
+		ul{
+		@include clearfix;
+		text-align:justify;
+		}
+
+		li {
+		width:40%;
+		}
+	}
+
+	@include MQ(M) {
+		padding: 40px 3%;
+
+		ul {
+			@include clearfix;
+			text-align: justify;
+		}
+
+		li {
+			width: 30%;
+			margin-bottom: 2em;
+		}
+	}
+
+	@include MQ(L) {
+		padding: 50px 2%;
+		float: right;
+		@include transition(width .3s);
+
+		li { 
+			width: 13%;
+		}
+
+		&.filter-is-visible {
+			/* reduce width when filter is visible */
+			width: 80%;
+		}
+	}
+
+}
+
+/*==================================================
+ * FILTER 
+ * ===============================================*/
+
+.cd-filter {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 280px;
+	height: 100%;
+	background: $color-white;
+	box-shadow: 4px 4px 20px rgba(#000, 0);
+	z-index: 2;
+
+	/* Force Hardware Acceleration in WebKit */
+	@include transform(translateZ(0));
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+
+	@include transform(translateX(-100%));
+	@include transition(transform .3s, box-shadow .3s);
+
+	&::before {
+		/* top colored bar */
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: $tab-filter-height;
+		width: 100%;
+		background-color: $color-green;
+		z-index: 2;
+	}
+
+	form {
+		padding: $tab-filter-height+20px 20px;
+	} 
+
+	.cd-close {
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: $tab-filter-height;
+		line-height: $tab-filter-height;
+		width: 60px;
+
+		color: $color-white;
+	 @include font-size(20px);
+		text-align: center;
+
+		background: darken($color-green, 5%);
+		 @include opacity(0);
+
+		@include transition(opacity .3s);
+		z-index: 3;
+
+		.no-touch &:hover {
+			background: darken($color-green, 8%);
+		}
+	}
+
+	&.filter-is-visible {
+		@include transform(translateX(0));
+		box-shadow: 4px 4px 20px rgba(#000, .2);
+
+		.cd-close {
+			 @include opacity(1);
+		}
+	}
+
+	@include MQ(L) {
+		width: 20%;
+
+		form {
+			padding: $tab-filter-height+20px 10%;
+		}
+	}
+}
+
+.cd-filter-trigger {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: $tab-filter-height;
+	line-height: $tab-filter-height;
+	width: 60px;
+
+	/* image replacement */
+	overflow: hidden;
+	text-indent: 100%;
+	color: transparent;
+	white-space: nowrap;
+	background: transparent url('../img/cd-icon-filter.svg') no-repeat center center;
+
+	z-index: 3;
+
+	&.filter-is-visible {
+		pointer-events: none;
+	}
+
+	@include MQ(L) {
+		width: auto;
+		left: 2%;
+
+		text-indent: 0;
+		color: $color-grey;
+		text-transform: uppercase;
+		 @include font-size(20px);
+		font-weight: 700;
+
+		padding-left: 24px;
+		background-position: left center;
+
+		@include transition(color .3s);
+
+		.no-touch &:hover {
+			color: $color-green;
+		}
+
+		&.filter-is-visible,
+		&.filter-is-visible:hover {
+			color: $color-white;
+		}
+	}
+}
